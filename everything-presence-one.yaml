@@ -5,7 +5,7 @@ substitutions:
   room: ""
   friendly_name: "Everything Presence One"
   project_name: "Everything Smart Technology.Everything Presence One"
-  project_version: "1.1.4"
+  project_version: "1.1.5"
   temperature_offset: "-3"
   humidity_offset: "5"
   temperature_update_interval: "60s"
@@ -138,7 +138,7 @@ switch:
       - delay: 1s
 
   - platform: template
-    name: "mmWave LED"
+    name: ${prefix_name}mmWave LED
     id: ${id_prefix}mmwave_led
     entity_category: config
     optimistic: true
@@ -161,7 +161,7 @@ switch:
       - switch.turn_on: ${id_prefix}mmwave_sensor
 
   - platform: template
-    name: "uart_presence_output"
+    name: ${prefix_name}uart_presence_output
     id: ${id_prefix}uart_presence_output
     entity_category: config
     internal: ${uart_presence_output_disabled}
@@ -185,7 +185,7 @@ switch:
       - switch.turn_on: ${id_prefix}mmwave_sensor
 
   - platform: template
-    name: "uart_target_output"
+    name: ${prefix_name}uart_target_output
     id: ${id_prefix}uart_target_output
     entity_category: config
     internal: ${uart_target_output_disabled}
